@@ -1,0 +1,24 @@
+[project]
+name = "partner-proposal-evaluator"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "anthropic>=1.8.0",
+    "pandas>=3.0.6",
+    "pdfplumber>=0.11.10",
+    "pydantic>=2.13.5",
+    "python-docx>=1.2.0",
+    "python-dotenv>=1.2.3",
+    "pyyaml>=6.0.3",
+    "scikit-learn>=1.9.1",
+    "typer>=0.27.2",
+]
+
+[project.scripts]
+partner-proposal-evaluator = "partner_proposal_evaluator:main"
+
+[build-system]
+requires = ["uv_build>=0.12.16,<0.13.0"]
+build-backend = "uv_build"

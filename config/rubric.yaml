@@ -1,0 +1,43 @@
+version: 1.0
+criteria:
+  - id: business_case_clarity
+    weight: 0.40
+    question: Is there a quantified, credible link between the ask and the return?
+    anchors:
+      5: Quantified pipeline or ACV target, named accounts or segment, timeline, assumptions stated.
+      3: Some numbers, but targets are not tied to the ask or assumptions are missing.
+      1: No quantified target; generic growth language.
+  - id: capability_fit
+    weight: 0.35
+    question: Does the partner's profile support what they propose?
+    anchors:
+      5: Named individual(s) with relevant experience, track record, and capacity to deliver the use cases in the region
+      3: Named individual(s) with some relevant experience, but limited track record or capacity
+      1: No named individual(s) or no relevant experience, track record, or capacity. No certified staff or references.
+  - id: execution_risk
+    weight: 0.25
+    question: Can the partner actually deliver?
+    anchors:
+      5: Named owner, funded team, clear plan, milestones, dependencies stated with mitigation; low risk of execution failure
+      3: Some plan and milestones, but limited risk mitigation strategies; moderate risk of execution failure
+      1: No clear plan or milestones, no owner; depends on vendor leads or unfunded hires; high risk
+  # capability_fit, execution_risk follow the same shape
+gates:
+  - id: no_quantified_target
+    rule: The proposal contains no numeric pipeline, revenue or customer target.
+  - id: no_named_owner
+    rule: No named individual owns delivery on the partner side.
+  - id: no_plan_or_milestones
+    rule: The proposal contains no plan or milestones for delivery.
+  - id: no_funding_or_capacity
+    rule: The proposal depends on vendor leads or unfunded hires, or the named individual has no relevant experience, track record, or capacity.
+  - id: no_certified_staff_or_references
+    rule: The proposal contains no certified staff or references to support the partner's capability to deliver.
+  - id: no_risk_mitigation
+    rule: The proposal contains no risk mitigation strategies for dependencies or execution risks.
+  - id: no_assumptions_stated
+    rule: The proposal contains no assumptions or context for the targets or plan.
+  - id: no_dependencies_stated
+    rule: The proposal contains no dependencies or context for the plan or milestones.
+  - id: no_timeline_stated
+    rule: The proposal contains no timeline or context for the targets or plan.
